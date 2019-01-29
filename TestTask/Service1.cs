@@ -42,7 +42,7 @@ namespace TestTask
                 users.Add($@"{Environment.MachineName}\\{username}");
             }
 
-            // Remove read permissions from all users in list
+            // Remove read permissions for all users in list
             var rs = new RegistrySecurity();
             foreach (var user in users)
             {
@@ -60,10 +60,6 @@ namespace TestTask
             productName.SetValue("URL", "localhost", RegistryValueKind.String);
             Logger.Log("Key created");
             return productName;
-        }
-
-        protected override void OnStop()
-        {
         }
     }
 }
